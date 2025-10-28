@@ -3,6 +3,8 @@ import random
 from rich import print
 from rich.console import Console
 
+default_message = "[bright_green]You stand still, unsure what to do. The forest swallows you.[/bright_green]"
+
 def step(choice: str, events):
     random_event = random.choice(events)
 
@@ -11,7 +13,7 @@ def step(choice: str, events):
     elif choice == "right":
         return right_path(random_event)
     else:
-        return "[bright_green]You stand still, unsure what to do. The forest swallows you.[/bright_green]"
+        return default_message
 
 def left_path(event):
     return "[bright_yellow]You walk [bright_blue]left[/bright_blue]. " + event + "[/bright_yellow]"
